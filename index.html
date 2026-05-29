@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boat Speed in Knots</title>
+<meta name="description" content="A dead-simple boat speedometer. Your GPS speed, in knots, shown big — on iPhone, the Lock Screen, and Apple Watch. No tracking, no data collection.">
+<style>
+  :root {
+    --bg: #000;
+    --panel: #0e0e10;
+    --fg: #f5f5f7;
+    --muted: #8a8a8e;
+    --line: #1f1f22;
+    --green: #34c759;
+    --blue: #0a84ff;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Hero */
+  header { text-align: center; padding: 88px 0 56px; }
+  .knots {
+    font-weight: 800;
+    font-size: clamp(72px, 22vw, 168px);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    font-feature-settings: "tnum";
+  }
+  .knots .unit { display: block; font-size: 0.16em; font-weight: 600; color: var(--muted); letter-spacing: 0.02em; margin-top: 0.4em; }
+  h1 { font-size: 28px; font-weight: 700; margin: 36px 0 6px; letter-spacing: -0.01em; }
+  .tagline { color: var(--muted); font-size: 19px; margin: 0; }
+
+  /* Sections */
+  section { padding: 40px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 22px; font-weight: 700; margin: 0 0 18px; letter-spacing: -0.01em; }
+  h3 { font-size: 16px; font-weight: 600; margin: 24px 0 4px; }
+  p { margin: 0 0 14px; }
+  ul { margin: 0; padding: 0; list-style: none; }
+  li { padding: 10px 0 10px 28px; position: relative; border-bottom: 1px solid var(--line); }
+  li:last-child { border-bottom: 0; }
+  li::before { content: ""; position: absolute; left: 4px; top: 19px; width: 9px; height: 9px; border-radius: 50%; background: var(--green); }
+  .lead { color: var(--muted); }
+  .pill { display: inline-block; background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 14px; color: var(--muted); }
+  .email { font-weight: 600; }
+
+  footer { padding: 48px 0 64px; color: var(--muted); font-size: 14px; text-align: center; border-top: 1px solid var(--line); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="knots">7.5<span class="unit">KNOTS</span></div>
+    <h1>Boat Speed in Knots</h1>
+    <p class="tagline">A dead-simple speedometer for the water.</p>
+  </header>
+
+  <section id="about">
+    <h2>What it does</h2>
+    <p class="lead">Your current speed, in knots, shown big enough to read at a glance from across the cockpit. That's it — no clutter, no menus, no setup. Open it and go.</p>
+    <ul>
+      <li>Large, glanceable knots readout</li>
+      <li>Lock-screen Live Activity — see your speed without unlocking your iPhone</li>
+      <li>A standalone Apple Watch app, so your speed is right there on your wrist</li>
+      <li>Day and night themes for bright decks and dark passages</li>
+      <li>Trip max and average speed</li>
+    </ul>
+  </section>
+
+  <section id="battery">
+    <h2>Save your battery</h2>
+    <p class="lead">GPS is power-hungry. Tap <strong>Stop</strong> when you don't need a live reading — it shuts location down and keeps your battery for when you really need it. Closing other navigation and chartplotter apps while you're at it helps even more.</p>
+  </section>
+
+  <section id="safety">
+    <h2>Stay safe out there</h2>
+    <p class="lead">Boat Speed shows GPS speed over ground — a handy reference, not a substitute for proper seamanship. Keep a lookout, watch the weather, and never rely on a single device for navigation. Fair winds.</p>
+  </section>
+
+  <section id="privacy">
+    <h2>Privacy Policy</h2>
+    <p><span class="pill">Last updated: May 2026</span></p>
+    <p class="lead">Boat Speed does not track you, and it collects no information about you whatsoever.</p>
+
+    <h3>No data collection</h3>
+    <p>The app has no accounts, no analytics, no advertising, and no third-party tracking or SDKs. We do not collect, store, sell, or share any personal data — there is no data to collect.</p>
+
+    <h3>Location</h3>
+    <p>Boat Speed uses your device's GPS for one purpose only: to calculate and display your current speed on your screen, in real time. Your location is used entirely on your device. It is never recorded, never stored, and never transmitted off your device — the app does not connect to any server, and we operate no servers that could receive it.</p>
+
+    <h3>The Apple Watch app &amp; Live Activity</h3>
+    <p>The Apple Watch app works the same way and stores nothing. The Lock-Screen Live Activity shows your current speed on your own device only.</p>
+
+    <h3>Children</h3>
+    <p>Because the app collects no data at all, it collects no data from children. It is safe for users of any age.</p>
+
+    <h3>Changes</h3>
+    <p>If this policy ever changes, the updated version will be posted on this page with a new date above.</p>
+
+    <h3>Contact</h3>
+    <p>Questions about privacy? Email <a class="email" href="mailto:boatspeed@devpocket.com">boatspeed@devpocket.com</a>.</p>
+  </section>
+
+  <section id="support">
+    <h2>Support</h2>
+    <p class="lead">Need help, found a bug, or have a request? We'd love to hear from you.</p>
+    <p>Email <a class="email" href="mailto:boatspeed@devpocket.com">boatspeed@devpocket.com</a> and we'll get back to you.</p>
+    <h3>Quick tips</h3>
+    <ul>
+      <li>No speed showing? Make sure location is set to "While Using the App" with Precise Location on.</li>
+      <li>Tap Stop when you're done to save battery.</li>
+      <li>Speed is GPS speed over ground, so it can differ from a through-water knotmeter.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Boat Speed in Knots &middot; by DevPocket &middot; &copy; 2026<br>
+    <a href="mailto:boatspeed@devpocket.com">boatspeed@devpocket.com</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
